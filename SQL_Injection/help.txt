@@ -1,0 +1,12 @@
+Run the app.py file :
+
+Open the folder and Run the command in cmd or terminal 
+
+$ 	Streamlit app.py
+
+Past the url in browser
+
+ex : Local URL: http://localhost:8501
+
+
+
