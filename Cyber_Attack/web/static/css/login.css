@@ -1,0 +1,117 @@
+/* General Styles for Login Page */
+body {
+    font-family: "Courier New", monospace;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Container Styles */
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    width: 300px;
+    text-align: center;
+    background-color : rgb( 255 , 255 , 255 , 0.05 ) ; 
+    padding-bottom : 70px ;
+}
+
+.login-container h2 {
+    margin-bottom: 40px;
+    font-size: 2.0em;
+    color: rgb( 255 , 255 ,255  ) ;
+    font-family: "Courier New", monospace;
+
+}
+
+.login-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color : rgb( 255 , 255 ,255 , 1 )  ;
+    font-family: "Courier New", monospace;
+    outline: 0px solid rgb(150 , 0 ,200 , 0.65 ) ;
+
+}
+
+
+.login-container input:hover {
+
+    outline: 2px solid rgb(150 , 0 ,200 , 0.65 ) ;
+
+}
+
+.login-container button {
+    padding: 10px 115px;
+    background-color: rgb(    50 , 0 ,200 , 0.75 ) ;
+    font-family: "Courier New", monospace;
+    color:  rgb( 255 , 255 , 255 ) ;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top : 20px ;
+    font-weight: bold;
+    transition: background-color 3s ,transform 0.3s ;
+    
+}
+
+.login-container button:hover {
+    background-color: rgb(40 , 0 , 120 , 0.9 )  ;
+    transform: scale(1.06);
+}
+
+.eye-icon {
+  position: absolute ;
+  top: 48.5%;
+  /*transform: translateY(-160%);*/
+  transform: translateX(-200%);
+  cursor: pointer;
+  font-size: 18px;
+  color: gray;
+  z-index: 10; /* Ensure it appears above the input field */
+}
+
+/* Flash Message Styles */
+.flash {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+
+/* Toast container */
+.toast {
+    visibility: hidden; /* Hidden by default */
+    min-width: 250px;
+    margin: 0 auto;
+    background-color: rgb( 255 , 50 , 50 , 0.75 ); /* Red for error */
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: visibility 0s, opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/* Toast when visible */
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+

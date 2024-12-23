@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body onload="scrollToTarget()" style="background-image: url('{{ url_for('static', filename='images/baseimage.png') }}'); background-size: cover; background-attachment: fixed; ">
+    <h1>SQL Injection Detection</h1>
+    <div class="form-container">
+        <h2>Welcome ! , {{username}} </h2>
+        
+        <div class="inner-container">
+        
+        <form action="{{ url_for('index') }}" method="POST">
+            <input type="text" id="query" name="query" placeholder=" ⭕ Enter SQL query" required>
+            <button type="submit" onclick="scrollToTarget()" >  
+                   <img 
+                       class="message" 
+                       src="{{ url_for('static', filename='images/paperp.png') }}"
+                       alt="message button"  >
+            </button>
+          </form>
+          
+          </div>
+    </div>
+    
+    
+    <!-- Conditionally render the div -->
+    {% if result %}
+        <div class="result-div" id="target" >
+            <h2>Model Predictions</h2>
+        <table>
+        <!-- Table Header -->
+        <thead>
+            <tr>
+                <th> Parameters </th>
+                <th> Results </th>
+            </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+            <tr>
+                <td>Model Prediction for the Query</td>
+                <td>{{ pred }}</td>
+            </tr>
+            <tr>
+                <td>Prediction Probability of Class [ 0 ]</td>
+                <td>{{ ppc0 }}</td>
+            </tr>
+            <tr>
+                <td>Prediction Probability of Class [ 1 ]</td>
+                <td>{{ ppc1 }}</td>
+            </tr>
+            <tr>
+                <td>SQL Injection Result</td>
+                <td>{{ sqli }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <p> RESULT : {{ mr  }} </p>
+        </div>
+        
+    
+    <script>
+        function scrollToTarget() {
+            // Get the target element
+            const target = document.getElementById("target");
+            // Scroll to the target element smoothly
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+        
+    {% endif %}
+    
+    
+</body>
+</html>
+
